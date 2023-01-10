@@ -7,20 +7,22 @@ graph TD
     Frontend --> FullStory(FullStory)
     Frontend --> Usabilla(Usabilla)
     Frontend --> Albotta("Albotta (Chat Bot)")
-    Frontend --> CMS(Optimizely CMS)
+    Frontend -- Backend --> CMS(Optimizely CMS)
     Frontend --> GTM(Google Tag Manager)
     Frontend --> GA("Google Analytics")
     Frontend --> CookieInfomation(Cookie Infomation)
     
+    subgraph Backend[" "]
     CMS --> APIM(APIM)
     CMS --> Auth0(Auth0)
 
     APIM --> TIA(TIA)
     APIM --> SF(Salesforce)
     
-    Auth0 --> Criipto("Criipto")
+    Auth0 --> Criipto("Criipto (MitID broker)")
     Auth0 --> AAD(Azure AD)
 
-    Criipto --> NemID
-    Criipto --> MitID
+    Criipto --> NemID(NemID)
+    Criipto --> MitID(MitID)
+    end
 ```
